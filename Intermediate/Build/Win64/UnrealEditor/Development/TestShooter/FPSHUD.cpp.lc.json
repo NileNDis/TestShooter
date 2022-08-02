@@ -1,0 +1,29 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\work\\projects\\testshooter\\source\\testshooter\\fpshud.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\testshootereditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\unrealeditor\\development\\testshooter\\definitions.testshooter.h",
+            "c:\\work\\projects\\testshooter\\source\\testshooter\\fpshud.h",
+            "c:\\work\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\hud.h",
+            "c:\\work\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\hudhitbox.h",
+            "c:\\work\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\debugtextinfo.h",
+            "c:\\work\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\debugtextinfo.generated.h",
+            "c:\\work\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\hud.generated.h",
+            "c:\\work\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\engine\\canvas.h",
+            "c:\\work\\ue_5.0\\engine\\source\\runtime\\engine\\public\\canvasitem.h",
+            "c:\\work\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\engine\\font.h",
+            "c:\\work\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\engine\\fontimportoptions.h",
+            "c:\\work\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\fontimportoptions.generated.h",
+            "c:\\work\\ue_5.0\\engine\\source\\runtime\\slatecore\\public\\fonts\\fontproviderinterface.h",
+            "c:\\work\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\slatecore\\fontproviderinterface.generated.h",
+            "c:\\work\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\font.generated.h",
+            "c:\\work\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\canvas.generated.h",
+            "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\unrealeditor\\inc\\testshooter\\fpshud.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

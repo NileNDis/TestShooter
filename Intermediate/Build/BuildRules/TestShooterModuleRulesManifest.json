@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"C:\\Work\\Projects\\TestShooter\\Source\\TestShooter\\TestShooter.Build.cs",
+		"C:\\Work\\Projects\\TestShooter\\Source\\TestShooter.Target.cs",
+		"C:\\Work\\Projects\\TestShooter\\Source\\TestShooterEditor.Target.cs"
+	],
+	"EngineVersion": "5.0.3"
+}
