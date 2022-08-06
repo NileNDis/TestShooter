@@ -137,8 +137,7 @@ void AFPSCharacter::Fire()
         {
             for (int32 i = 0; i < Enemies.Num(); i++)
             {
-               // Cast<AFirstEnemy>(Enemies[i]);
-                FVector EnemyLocation = Enemies[i]->GetActorLocation();
+                FVector EnemyLocation1 = Enemies[i]->GetActorLocation();// взять первого чела с массива
                 FVector HerosLocation = GetActorLocation();
                 Cast<AFirstEnemy>(Enemies[i]);
 
@@ -146,8 +145,8 @@ void AFPSCharacter::Fire()
                 SpawnParams.Owner = this;
                 SpawnParams.Instigator = GetInstigator();
 
-                UE_LOG(LogTemp, Warning, TEXT("Distance: %f"), FVector::Dist(HerosLocation, EnemyLocation));
-                if (FVector::Dist(HerosLocation, EnemyLocation) <= 1000)
+                UE_LOG(LogTemp, Warning, TEXT("Distance: %f"), FVector::Dist(HerosLocation, EnemyLocation1));
+                if (FVector::Dist(HerosLocation, EnemyLocation1) <= 1000) //&& )//line trace
                 {
                     AFPSProjectile* Projectile = World->SpawnActor<AFPSProjectile>(ProjectileClass, MuzzleLocation, MuzzleRotation, SpawnParams);
                     if (Projectile)

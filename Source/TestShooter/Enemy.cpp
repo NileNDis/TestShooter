@@ -23,8 +23,8 @@ AEnemy::AEnemy()
 void AEnemy::HandleDestruction()
 {
 	//Super::HandleDestruction();
-	//GetWorld()->DestroyActor(this);//////////////
-	Destroy();
+	GetWorld()->DestroyActor(this);//////////////
+	//Destroy();
 }
 
 void AEnemy::BeginPlay()

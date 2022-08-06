@@ -2,6 +2,7 @@
 #include "MyLineTrace.h"
 #include "Engine/World.h"
 #include "DrawDebugHelpers.h"
+#include "PhysicsEngine/PhysicsHandleComponent.h"
 #include "Kismet/KismetSystemLibrary.h"
 
 
@@ -24,6 +25,16 @@ void UMyLineTrace::BeginPlay()
 
 	// ...
 	
+	UPhysicsHandleComponent* PhysicsHandle = GetOwner()->FindComponentByClass<UPhysicsHandleComponent>();
+	if (PhysicsHandle != nullptr)
+	{
+		UE_LOG(LogTemp, Display, TEXT("Got Physics Handle: %s"), *PhysicsHandle->GetName());
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("No Physics Handle Found!"));
+	}
+
 }
 
 
