@@ -2,7 +2,6 @@
 #include "MyLineTrace.h"
 #include "Engine/World.h"
 #include "DrawDebugHelpers.h"
-#include "PhysicsEngine/PhysicsHandleComponent.h"
 #include "Kismet/KismetSystemLibrary.h"
 
 
@@ -25,15 +24,7 @@ void UMyLineTrace::BeginPlay()
 
 	// ...
 	
-	UPhysicsHandleComponent* PhysicsHandle = GetOwner()->FindComponentByClass<UPhysicsHandleComponent>();
-	if (PhysicsHandle != nullptr)
-	{
-		UE_LOG(LogTemp, Display, TEXT("Got Physics Handle: %s"), *PhysicsHandle->GetName());
-	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("No Physics Handle Found!"));
-	}
+	
 
 }
 
@@ -47,7 +38,7 @@ void UMyLineTrace::TickComponent(float DeltaTime, ELevelTick TickType, FActorCom
 }
 
 
-void UMyLineTrace::LineTrace()
+FHitResult UMyLineTrace::LineTrace()
 {
 	FHitResult HitResult;
 
@@ -55,21 +46,8 @@ void UMyLineTrace::LineTrace()
 	FVector End = Start + GetForwardVector() * Distance;//FVector(0, -1000, 0);
 	DrawDebugLine(GetWorld(), Start, End, FColor::Red);
 
-	//FCollisionQueryParams CollQueryParams;
-	//CollQueryParams.AddIgnoredComponent(this);
-
 	bool bHit = GetWorld()->LineTraceSingleByChannel(HitResult, Start, End, ECC_Visibility);
 
-	if (bHit)
-	{
-		AActor* HitActor = HitResult.GetActor();
-		//UE_LOG(LogTemp, Display, TEXT("Hit actor: %s"), *HitActor->GetActorNameOrLabel());
-
-
-	}
-	else
-	{
-		//UE_LOG(LogTemp, Display, TEXT("No actor hit"));
-	}
+	return HitResult;
 
 }

@@ -8,6 +8,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
 #ifdef TESTSHOOTER_FPSCharacter_generated_h
 #error "FPSCharacter.generated.h already included, missing '#pragma once' in FPSCharacter.h"
 #endif
@@ -16,6 +17,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_TestShooter_Source_TestShooter_FPSCharacter_h_16_SPARSE_DATA
 #define FID_TestShooter_Source_TestShooter_FPSCharacter_h_16_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execSpawnProjectile); \
+	DECLARE_FUNCTION(execDestroyDelegate); \
 	DECLARE_FUNCTION(execFire); \
 	DECLARE_FUNCTION(execStopJump); \
 	DECLARE_FUNCTION(execStartJump); \
@@ -25,6 +28,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define FID_TestShooter_Source_TestShooter_FPSCharacter_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execSpawnProjectile); \
+	DECLARE_FUNCTION(execDestroyDelegate); \
 	DECLARE_FUNCTION(execFire); \
 	DECLARE_FUNCTION(execStopJump); \
 	DECLARE_FUNCTION(execStartJump); \

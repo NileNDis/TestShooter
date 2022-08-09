@@ -13,6 +13,4 @@ UCLASS()
 class TESTSHOOTER_API AThirdEnemy : public AEnemy
 {
 	GENERATED_BODY()
-protected:
-	virtual void BeginPlay() override;
 };

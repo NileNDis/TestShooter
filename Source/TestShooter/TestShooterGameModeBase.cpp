@@ -7,19 +7,6 @@
 
 void ATestShooterGameModeBase::ActorDied(AActor* DeadActor)
 {
-  //  if (DeadActor == Tank)
-  //  {
-  //      Tank->HandleDestruction();
-  //      if (Tank->GetTankPlayerController())
-  //      {
-  //          Tank->DisableInput(Tank->GetTankPlayerController());
-  //          Tank->GetTankPlayerController()->bShowMouseCursor = false;
-  //      }
-  //  }
-    //if (AEnemy* DestroyedEnemy = Cast<AEnemy>(DeadActor))
-   // {
-   //     DestroyedEnemy->HandleDestruction();
-   // }
     if (DeadActor == Enemy)
     {
         Enemy->HandleDestruction();

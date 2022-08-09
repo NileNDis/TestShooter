@@ -172,6 +172,8 @@
     <None Include="..\..\TestShooter.uproject"/>
     <None Include="..\..\Source\TestShooter.Target.cs"/>
     <None Include="..\..\Source\TestShooterEditor.Target.cs"/>
+    <None Include="..\..\.gitattributes"/>
+    <None Include="..\..\.gitignore"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
     <None Include="..\..\Config\DefaultEngine.ini"/>
     <None Include="..\..\Config\DefaultGame.ini"/>
@@ -212,6 +214,11 @@
       <ForcedIncludeFiles>$(SolutionDir)Intermediate\Build\Win64\TestShooterEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h;$(SolutionDir)Intermediate\Build\Win64\UnrealEditor\Development\TestShooter\Definitions.TestShooter.h</ForcedIncludeFiles>
     </ClCompile>
     <ClInclude Include="..\..\Source\TestShooter\MyLineTrace.h"/>
+    <ClCompile Include="..\..\Source\TestShooter\MySaveGame.cpp">
+      <AdditionalIncludeDirectories>$(NMakeIncludeSearchPath);C:\Work\UE_5.0\Engine\Source\ThirdParty\mimalloc\include;C:\Work\UE_5.0\Engine\Source\ThirdParty\LibTiff\Source\Win64;C:\Work\UE_5.0\Engine\Source\ThirdParty\LibTiff\Source;C:\Work\UE_5.0\Engine\Source\ThirdParty\PhysX3\PxShared\include;C:\Work\UE_5.0\Engine\Source\ThirdParty\PhysX3\PxShared\include\cudamanager;C:\Work\UE_5.0\Engine\Source\ThirdParty\PhysX3\PxShared\include\filebuf;C:\Work\UE_5.0\Engine\Source\ThirdParty\PhysX3\PxShared\include\foundation;C:\Work\UE_5.0\Engine\Source\ThirdParty\PhysX3\PxShared\include\pvd;C:\Work\UE_5.0\Engine\Source\ThirdParty\PhysX3\PxShared\include\task;C:\Work\UE_5.0\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include;C:\Work\UE_5.0\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\cooking;C:\Work\UE_5.0\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\common;C:\Work\UE_5.0\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\extensions;C:\Work\UE_5.0\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\geometry;</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(SolutionDir)Intermediate\Build\Win64\TestShooterEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h;$(SolutionDir)Intermediate\Build\Win64\UnrealEditor\Development\TestShooter\Definitions.TestShooter.h</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TestShooter\MySaveGame.h"/>
     <ClCompile Include="..\..\Source\TestShooter\SecondEnemy.cpp">
       <AdditionalIncludeDirectories>$(NMakeIncludeSearchPath);C:\Work\UE_5.0\Engine\Source\ThirdParty\mimalloc\include;C:\Work\UE_5.0\Engine\Source\ThirdParty\LibTiff\Source\Win64;C:\Work\UE_5.0\Engine\Source\ThirdParty\LibTiff\Source;C:\Work\UE_5.0\Engine\Source\ThirdParty\PhysX3\PxShared\include;C:\Work\UE_5.0\Engine\Source\ThirdParty\PhysX3\PxShared\include\cudamanager;C:\Work\UE_5.0\Engine\Source\ThirdParty\PhysX3\PxShared\include\filebuf;C:\Work\UE_5.0\Engine\Source\ThirdParty\PhysX3\PxShared\include\foundation;C:\Work\UE_5.0\Engine\Source\ThirdParty\PhysX3\PxShared\include\pvd;C:\Work\UE_5.0\Engine\Source\ThirdParty\PhysX3\PxShared\include\task;C:\Work\UE_5.0\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include;C:\Work\UE_5.0\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\cooking;C:\Work\UE_5.0\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\common;C:\Work\UE_5.0\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\extensions;C:\Work\UE_5.0\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\geometry;</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(SolutionDir)Intermediate\Build\Win64\TestShooterEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h;$(SolutionDir)Intermediate\Build\Win64\UnrealEditor\Development\TestShooter\Definitions.TestShooter.h</ForcedIncludeFiles>

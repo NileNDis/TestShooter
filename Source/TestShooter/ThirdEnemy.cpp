@@ -2,11 +2,3 @@
 
 
 #include "ThirdEnemy.h"
-
-void AThirdEnemy::BeginPlay()
-{
-
-	Super::BeginPlay();
-
-	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Blue, TEXT("Health3: "));
-}

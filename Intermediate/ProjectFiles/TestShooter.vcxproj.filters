@@ -11,6 +11,8 @@
     <None Include="..\..\Source\TestShooterEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -75,6 +77,12 @@
       <Filter>Source\TestShooter</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\TestShooter\MyLineTrace.h">
+      <Filter>Source\TestShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TestShooter\MySaveGame.cpp">
+      <Filter>Source\TestShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TestShooter\MySaveGame.h">
       <Filter>Source\TestShooter</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\TestShooter\SecondEnemy.cpp">

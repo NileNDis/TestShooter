@@ -8,6 +8,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+struct FHitResult;
 #ifdef TESTSHOOTER_MyLineTrace_generated_h
 #error "MyLineTrace.generated.h already included, missing '#pragma once' in MyLineTrace.h"
 #endif

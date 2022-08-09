@@ -1,0 +1,17 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\unrealeditor\\inc\\testshooter\\mysavegame.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\testshootereditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\unrealeditor\\development\\testshooter\\definitions.testshooter.h",
+            "c:\\work\\projects\\testshooter\\source\\testshooter\\mysavegame.h",
+            "c:\\work\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\savegame.h",
+            "c:\\work\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\savegame.generated.h",
+            "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\unrealeditor\\inc\\testshooter\\mysavegame.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

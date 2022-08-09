@@ -19,11 +19,6 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-
-private:
-
-
-
 public:	
 
 	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
@@ -34,13 +29,6 @@ public:
 
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
 	void HandleDestruction();//
 };
-// попробуй перевести в pawn
-// попробуй перевести в pawn
-// попробуй перевести в pawn
-// попробуй перевести в pawn
-// попробуй перевести в pawn
-// попробуй перевести в pawn
-// попробуй перевести в pawn
-// попробуй перевести в pawn

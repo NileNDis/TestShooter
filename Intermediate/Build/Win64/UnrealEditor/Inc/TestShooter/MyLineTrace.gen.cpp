@@ -13,12 +13,13 @@ void EmptyLinkFunctionForGeneratedCodeMyLineTrace() {}
 	TESTSHOOTER_API UClass* Z_Construct_UClass_UMyLineTrace();
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent();
 	UPackage* Z_Construct_UPackage__Script_TestShooter();
+	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 // End Cross Module References
 	DEFINE_FUNCTION(UMyLineTrace::execLineTrace)
 	{
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->LineTrace();
+		*(FHitResult*)Z_Param__Result=P_THIS->LineTrace();
 		P_NATIVE_END;
 	}
 	void UMyLineTrace::StaticRegisterNativesUMyLineTrace()
@@ -31,17 +32,27 @@ void EmptyLinkFunctionForGeneratedCodeMyLineTrace() {}
 	}
 	struct Z_Construct_UFunction_UMyLineTrace_LineTrace_Statics
 	{
+		struct MyLineTrace_eventLineTrace_Parms
+		{
+			FHitResult ReturnValue;
+		};
+		static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UMyLineTrace_LineTrace_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010008000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(MyLineTrace_eventLineTrace_Parms, ReturnValue), Z_Construct_UScriptStruct_FHitResult, METADATA_PARAMS(nullptr, 0) }; // 1416937132
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UMyLineTrace_LineTrace_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UMyLineTrace_LineTrace_Statics::NewProp_ReturnValue,
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UMyLineTrace_LineTrace_Statics::Function_MetaDataParams[] = {
 		{ "ModuleRelativePath", "MyLineTrace.h" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UMyLineTrace_LineTrace_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UMyLineTrace, nullptr, "LineTrace", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UMyLineTrace_LineTrace_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UMyLineTrace_LineTrace_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UMyLineTrace_LineTrace_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UMyLineTrace, nullptr, "LineTrace", nullptr, nullptr, sizeof(Z_Construct_UFunction_UMyLineTrace_LineTrace_Statics::MyLineTrace_eventLineTrace_Parms), Z_Construct_UFunction_UMyLineTrace_LineTrace_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UMyLineTrace_LineTrace_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UMyLineTrace_LineTrace_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UMyLineTrace_LineTrace_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_UMyLineTrace_LineTrace()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -76,7 +87,7 @@ void EmptyLinkFunctionForGeneratedCodeMyLineTrace() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_TestShooter,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UMyLineTrace_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UMyLineTrace_LineTrace, "LineTrace" }, // 1010808576
+		{ &Z_Construct_UFunction_UMyLineTrace_LineTrace, "LineTrace" }, // 458876531
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UMyLineTrace_Statics::Class_MetaDataParams[] = {
@@ -132,9 +143,9 @@ void EmptyLinkFunctionForGeneratedCodeMyLineTrace() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TestShooter_Source_TestShooter_MyLineTrace_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UMyLineTrace, UMyLineTrace::StaticClass, TEXT("UMyLineTrace"), &Z_Registration_Info_UClass_UMyLineTrace, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMyLineTrace), 2409132982U) },
+		{ Z_Construct_UClass_UMyLineTrace, UMyLineTrace::StaticClass, TEXT("UMyLineTrace"), &Z_Registration_Info_UClass_UMyLineTrace, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMyLineTrace), 3545631236U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TestShooter_Source_TestShooter_MyLineTrace_h_149682028(TEXT("/Script/TestShooter"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TestShooter_Source_TestShooter_MyLineTrace_h_3260479417(TEXT("/Script/TestShooter"),
 		Z_CompiledInDeferFile_FID_TestShooter_Source_TestShooter_MyLineTrace_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_TestShooter_Source_TestShooter_MyLineTrace_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
