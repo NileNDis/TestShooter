@@ -9,16 +9,20 @@
 #include "FirstEnemy.h"
 #include "SecondEnemy.h"
 #include "ThirdEnemy.h"
+#include "GameSave.h"
 
 // Sets default values
 AFPSCharacter::AFPSCharacter()
 {
 
-
     // Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
     PrimaryActorTick.bCanEverTick = true;
 
     // Create a first person camera component.
+    //HPComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("HPComponent"));
+
+    Enemys = CreateDefaultSubobject<AEnemy>(TEXT("Enemy"));
+
     FPSCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
     check(FPSCameraComponent != nullptr);
 
@@ -50,6 +54,8 @@ AFPSCharacter::AFPSCharacter()
 
     // The owning player doesn't see the regular (third-person) body mesh.
     GetMesh()->SetOwnerNoSee(true);
+
+  
 
 }
 
@@ -100,8 +106,12 @@ void AFPSCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
     PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AFPSCharacter::StartJump);
     PlayerInputComponent->BindAction("Jump", IE_Released, this, &AFPSCharacter::StopJump);
 
-   // PlayerInputComponent->BindAction("Restart", IE_Pressed, this, &AFPSCharacter::Restart);
+ //   PlayerInputComponent->BindAction("Restart", IE_Pressed, this, &AFPSCharacter::Restart);
    // PlayerInputComponent->BindAction("Restart", IE_Released, this, &AFPSCharacter::StopRestart);
+
+    PlayerInputComponent->BindAction("Save", IE_Pressed, this, &AFPSCharacter::SaveGame);
+    PlayerInputComponent->BindAction("Load", IE_Pressed, this, &AFPSCharacter::LoadGame);
+
 
     PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AFPSCharacter::Fire);
 }
@@ -111,6 +121,34 @@ void AFPSCharacter::MoveForward(float Value)
     AddMovementInput(GetActorForwardVector() * Value);
 }
 
+void AFPSCharacter::SaveGame()
+{
+    //create an instance of our savegame class
+   UGameSave* SaveGameInstance = Cast<UGameSave>(UGameplayStatics::CreateSaveGameObject(UGameSave::StaticClass()));
+
+    SaveGameInstance->PlayerLocation = GetActorLocation();
+
+   // SaveGameInstance->EnemyHealth = Enemys->Health;
+    //SaveGameInstance->EnemyHealth = Enemys->Health;
+    //save game
+    UGameplayStatics::SaveGameToSlot(SaveGameInstance, TEXT("MySlot"), 0);
+
+    GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, FString::Printf(TEXT("Game Saved")));
+}
+
+void AFPSCharacter::LoadGame()
+{
+    UGameSave* SaveGameInstance = Cast<UGameSave>(UGameplayStatics::CreateSaveGameObject(UGameSave::StaticClass()));
+
+    SaveGameInstance = Cast<UGameSave>(UGameplayStatics::LoadGameFromSlot("MySlot", 0));
+
+    //Set the players position from the saved game instance
+    SetActorLocation(SaveGameInstance->PlayerLocation);
+
+  //  Enemys->Health(SaveGameInstance->EnemyHealth);
+
+    GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, FString::Printf(TEXT("Game Loaded")));
+}
 
 void AFPSCharacter::MoveRight(float Value)
 {
@@ -129,7 +167,10 @@ void AFPSCharacter::StopJump()
 
 //void AFPSCharacter::Restart()
 //{
-//     UGameplayStatics::OpenLevel(this, FName(*GetWorld()->GetName()), false);
+// //  if (IE_Pressed)
+// //  {
+// //      UGameplayStatics::OpenLevel(this, FName("Minimal_Default"), true);
+// //  }
 //}
 //
 //void AFPSCharacter::StopRestart()

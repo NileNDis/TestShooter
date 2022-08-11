@@ -18,6 +18,11 @@ public:
 
 	void ActorDied(AActor* DeadActor);//
 
+	TArray <AActor*> Enemies;
+
+	void Func();
+
+	class AEnemy* Enemy;
 
 
 protected:
@@ -26,6 +31,5 @@ protected:
 
 private:
 
-	class AEnemy* Enemy;//
 
 };

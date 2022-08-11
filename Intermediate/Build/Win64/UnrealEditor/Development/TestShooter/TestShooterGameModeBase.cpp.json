@@ -22,7 +22,13 @@
             "c:\\work\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\gameplaystaticstypes.generated.h",
             "c:\\work\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\gameplaystatics.generated.h",
             "c:\\work\\projects\\testshooter\\source\\testshooter\\enemy.h",
-            "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\unrealeditor\\inc\\testshooter\\enemy.generated.h"
+            "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\unrealeditor\\inc\\testshooter\\enemy.generated.h",
+            "c:\\work\\projects\\testshooter\\source\\testshooter\\firstenemy.h",
+            "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\unrealeditor\\inc\\testshooter\\firstenemy.generated.h",
+            "c:\\work\\projects\\testshooter\\source\\testshooter\\secondenemy.h",
+            "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\unrealeditor\\inc\\testshooter\\secondenemy.generated.h",
+            "c:\\work\\projects\\testshooter\\source\\testshooter\\thirdenemy.h",
+            "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\unrealeditor\\inc\\testshooter\\thirdenemy.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

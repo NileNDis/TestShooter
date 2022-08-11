@@ -21,6 +21,9 @@ public:
 
     class UMyLineTrace* LineTracer;
 
+    class UHealthComponent* HPComponent;
+
+    class AEnemy* Enemys;
 protected:
     // Called when the game starts or when spawned
     virtual void BeginPlay() override;
@@ -43,6 +46,12 @@ public:
     // Sets jump flag when key is pressed.
     UFUNCTION()
         void StartJump();
+
+    UFUNCTION()
+        void SaveGame();
+
+    UFUNCTION()
+        void LoadGame();
 
     // Clears jump flag when key is released.
     UFUNCTION()
@@ -77,4 +86,6 @@ public:
     UFUNCTION()
         void SpawnProjectile();
 
+  // UFUNCTION()
+  //     void Restart();
 };

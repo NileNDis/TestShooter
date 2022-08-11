@@ -1,0 +1,26 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\unrealeditor\\inc\\testshooter\\gamesave.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\testshootereditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\unrealeditor\\development\\testshooter\\definitions.testshooter.h",
+            "c:\\work\\projects\\testshooter\\source\\testshooter\\gamesave.h",
+            "c:\\work\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\savegame.h",
+            "c:\\work\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\savegame.generated.h",
+            "c:\\work\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystatics.h",
+            "c:\\work\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\kismet\\kismetsystemlibrary.h",
+            "c:\\work\\ue_5.0\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
+            "c:\\work\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\kismetsystemlibrary.generated.h",
+            "c:\\work\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\sound\\dialoguetypes.h",
+            "c:\\work\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\dialoguetypes.generated.h",
+            "c:\\work\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystaticstypes.h",
+            "c:\\work\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\gameplaystaticstypes.generated.h",
+            "c:\\work\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\gameplaystatics.generated.h",
+            "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\unrealeditor\\inc\\testshooter\\gamesave.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

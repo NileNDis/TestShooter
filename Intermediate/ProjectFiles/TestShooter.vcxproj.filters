@@ -67,6 +67,12 @@
     <ClInclude Include="..\..\Source\TestShooter\FPSProjectile.h">
       <Filter>Source\TestShooter</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\TestShooter\GameSave.cpp">
+      <Filter>Source\TestShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TestShooter\GameSave.h">
+      <Filter>Source\TestShooter</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\TestShooter\HealthComponent.cpp">
       <Filter>Source\TestShooter</Filter>
     </ClCompile>
@@ -77,12 +83,6 @@
       <Filter>Source\TestShooter</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\TestShooter\MyLineTrace.h">
-      <Filter>Source\TestShooter</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\TestShooter\MySaveGame.cpp">
-      <Filter>Source\TestShooter</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\TestShooter\MySaveGame.h">
       <Filter>Source\TestShooter</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\TestShooter\SecondEnemy.cpp">

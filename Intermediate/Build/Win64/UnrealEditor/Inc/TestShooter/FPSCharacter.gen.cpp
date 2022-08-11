@@ -49,6 +49,20 @@ void EmptyLinkFunctionForGeneratedCodeFPSCharacter() {}
 		P_THIS->StopJump();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(AFPSCharacter::execLoadGame)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->LoadGame();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(AFPSCharacter::execSaveGame)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SaveGame();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AFPSCharacter::execStartJump)
 	{
 		P_FINISH;
@@ -78,8 +92,10 @@ void EmptyLinkFunctionForGeneratedCodeFPSCharacter() {}
 		static const FNameNativePtrPair Funcs[] = {
 			{ "DestroyDelegate", &AFPSCharacter::execDestroyDelegate },
 			{ "Fire", &AFPSCharacter::execFire },
+			{ "LoadGame", &AFPSCharacter::execLoadGame },
 			{ "MoveForward", &AFPSCharacter::execMoveForward },
 			{ "MoveRight", &AFPSCharacter::execMoveRight },
+			{ "SaveGame", &AFPSCharacter::execSaveGame },
 			{ "SpawnProjectile", &AFPSCharacter::execSpawnProjectile },
 			{ "StartJump", &AFPSCharacter::execStartJump },
 			{ "StopJump", &AFPSCharacter::execStopJump },
@@ -137,6 +153,28 @@ void EmptyLinkFunctionForGeneratedCodeFPSCharacter() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AFPSCharacter_Fire_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AFPSCharacter_LoadGame_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AFPSCharacter_LoadGame_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "FPSCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AFPSCharacter_LoadGame_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AFPSCharacter, nullptr, "LoadGame", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AFPSCharacter_LoadGame_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AFPSCharacter_LoadGame_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AFPSCharacter_LoadGame()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AFPSCharacter_LoadGame_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -205,6 +243,28 @@ void EmptyLinkFunctionForGeneratedCodeFPSCharacter() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AFPSCharacter_MoveRight_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AFPSCharacter_SaveGame_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AFPSCharacter_SaveGame_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "FPSCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AFPSCharacter_SaveGame_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AFPSCharacter, nullptr, "SaveGame", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AFPSCharacter_SaveGame_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AFPSCharacter_SaveGame_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AFPSCharacter_SaveGame()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AFPSCharacter_SaveGame_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -321,8 +381,10 @@ void EmptyLinkFunctionForGeneratedCodeFPSCharacter() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_AFPSCharacter_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AFPSCharacter_DestroyDelegate, "DestroyDelegate" }, // 2430122716
 		{ &Z_Construct_UFunction_AFPSCharacter_Fire, "Fire" }, // 3685899550
+		{ &Z_Construct_UFunction_AFPSCharacter_LoadGame, "LoadGame" }, // 3493801387
 		{ &Z_Construct_UFunction_AFPSCharacter_MoveForward, "MoveForward" }, // 661818586
 		{ &Z_Construct_UFunction_AFPSCharacter_MoveRight, "MoveRight" }, // 1405738359
+		{ &Z_Construct_UFunction_AFPSCharacter_SaveGame, "SaveGame" }, // 697517572
 		{ &Z_Construct_UFunction_AFPSCharacter_SpawnProjectile, "SpawnProjectile" }, // 1872267109
 		{ &Z_Construct_UFunction_AFPSCharacter_StartJump, "StartJump" }, // 3619851086
 		{ &Z_Construct_UFunction_AFPSCharacter_StopJump, "StopJump" }, // 1330088821
@@ -417,9 +479,9 @@ void EmptyLinkFunctionForGeneratedCodeFPSCharacter() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TestShooter_Source_TestShooter_FPSCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AFPSCharacter, AFPSCharacter::StaticClass, TEXT("AFPSCharacter"), &Z_Registration_Info_UClass_AFPSCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFPSCharacter), 560871017U) },
+		{ Z_Construct_UClass_AFPSCharacter, AFPSCharacter::StaticClass, TEXT("AFPSCharacter"), &Z_Registration_Info_UClass_AFPSCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFPSCharacter), 14598946U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TestShooter_Source_TestShooter_FPSCharacter_h_4262010796(TEXT("/Script/TestShooter"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TestShooter_Source_TestShooter_FPSCharacter_h_1820950065(TEXT("/Script/TestShooter"),
 		Z_CompiledInDeferFile_FID_TestShooter_Source_TestShooter_FPSCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_TestShooter_Source_TestShooter_FPSCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

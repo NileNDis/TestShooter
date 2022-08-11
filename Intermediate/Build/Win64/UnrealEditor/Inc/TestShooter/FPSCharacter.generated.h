@@ -21,6 +21,8 @@ class AActor;
 	DECLARE_FUNCTION(execDestroyDelegate); \
 	DECLARE_FUNCTION(execFire); \
 	DECLARE_FUNCTION(execStopJump); \
+	DECLARE_FUNCTION(execLoadGame); \
+	DECLARE_FUNCTION(execSaveGame); \
 	DECLARE_FUNCTION(execStartJump); \
 	DECLARE_FUNCTION(execMoveRight); \
 	DECLARE_FUNCTION(execMoveForward);
@@ -32,6 +34,8 @@ class AActor;
 	DECLARE_FUNCTION(execDestroyDelegate); \
 	DECLARE_FUNCTION(execFire); \
 	DECLARE_FUNCTION(execStopJump); \
+	DECLARE_FUNCTION(execLoadGame); \
+	DECLARE_FUNCTION(execSaveGame); \
 	DECLARE_FUNCTION(execStartJump); \
 	DECLARE_FUNCTION(execMoveRight); \
 	DECLARE_FUNCTION(execMoveForward);

@@ -33,10 +33,10 @@ public:
 
 		//////////////////
 
-	UPROPERTY(EditAnywhere, SaveGame)
+	UPROPERTY(EditAnywhere)
 		float MaxHealth = 100;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, SaveGame)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	float Health = 0;
 
 	class ATestShooterGameModeBase* TestShooterGameModeBase;
