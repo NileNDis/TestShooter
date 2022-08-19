@@ -13,7 +13,7 @@ UGameSave::UGameSave()
 
 	EnemyHp = CreateDefaultSubobject<AEnemy>(TEXT("EnemyHp"));
 
-	HP = HealthComp->Health;
+	//HP = HealthComp->Health;
 
 	PlayerLocation = FPSCharacter->GetActorLocation();
 

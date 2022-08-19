@@ -14,4 +14,13 @@ class TESTSHOOTER_API ASecondEnemy : public AEnemy
 {
 	GENERATED_BODY()
 
+public:
+	virtual bool CanShoot(AActor* Hero) override;
+
+	//virtual void Tick(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction);
+
+	virtual void Tick(float DeltaTime);
+
+	UPROPERTY()
+		float Distance = 8000;
 };

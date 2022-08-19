@@ -22,10 +22,28 @@ public:
 
 	void Func();
 
+	UPROPERTY(EditAnywhere)
 	class AEnemy* Enemy;
 
+	UPROPERTY(EditAnywhere)
+		class UHealthComponent* Hp;
+
+	UFUNCTION(BlueprintPure)
+		TArray <AActor*> GetEnemies() { return Enemies; };
+
+	//for (int i = 0; i < Enemies.Num(); i++)
+	//{
+	//	Enemies[i]->OnDestroyed.AddDynamic(this, &AFPSCharacter::DestroyDelegate);
+	//}
+	
+	
+	//void AFPSCharacter::DestroyDelegate(AActor* DestroyedActor)
+	//{
+	//	Enemies.Remove(DestroyedActor);
+	//}
 
 protected:
+	ATestShooterGameModeBase();
 
 	virtual void BeginPlay() override;//
 

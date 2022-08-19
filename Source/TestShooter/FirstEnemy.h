@@ -14,4 +14,7 @@ class TESTSHOOTER_API AFirstEnemy : public AEnemy
 {
 	GENERATED_BODY()
 
+public:
+
+	virtual bool CanShoot(AActor* Hero) override;
 };

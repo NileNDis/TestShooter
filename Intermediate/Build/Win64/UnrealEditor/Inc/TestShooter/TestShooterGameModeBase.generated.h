@@ -8,14 +8,23 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
 #ifdef TESTSHOOTER_TestShooterGameModeBase_generated_h
 #error "TestShooterGameModeBase.generated.h already included, missing '#pragma once' in TestShooterGameModeBase.h"
 #endif
 #define TESTSHOOTER_TestShooterGameModeBase_generated_h
 
 #define FID_TestShooter_Source_TestShooter_TestShooterGameModeBase_h_15_SPARSE_DATA
-#define FID_TestShooter_Source_TestShooter_TestShooterGameModeBase_h_15_RPC_WRAPPERS
-#define FID_TestShooter_Source_TestShooter_TestShooterGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_TestShooter_Source_TestShooter_TestShooterGameModeBase_h_15_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetEnemies);
+
+
+#define FID_TestShooter_Source_TestShooter_TestShooterGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetEnemies);
+
+
 #define FID_TestShooter_Source_TestShooter_TestShooterGameModeBase_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesATestShooterGameModeBase(); \
@@ -36,7 +45,7 @@ public: \
 
 #define FID_TestShooter_Source_TestShooter_TestShooterGameModeBase_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ATestShooterGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	NO_API ATestShooterGameModeBase(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ATestShooterGameModeBase) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ATestShooterGameModeBase); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ATestShooterGameModeBase); \
@@ -48,8 +57,6 @@ public:
 
 
 #define FID_TestShooter_Source_TestShooter_TestShooterGameModeBase_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ATestShooterGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ATestShooterGameModeBase(ATestShooterGameModeBase&&); \
@@ -57,7 +64,7 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ATestShooterGameModeBase); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ATestShooterGameModeBase); \
-	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ATestShooterGameModeBase)
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ATestShooterGameModeBase)
 
 
 #define FID_TestShooter_Source_TestShooter_TestShooterGameModeBase_h_12_PROLOG

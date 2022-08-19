@@ -28,7 +28,9 @@
             "c:\\work\\projects\\testshooter\\source\\testshooter\\secondenemy.h",
             "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\unrealeditor\\inc\\testshooter\\secondenemy.generated.h",
             "c:\\work\\projects\\testshooter\\source\\testshooter\\thirdenemy.h",
-            "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\unrealeditor\\inc\\testshooter\\thirdenemy.generated.h"
+            "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\unrealeditor\\inc\\testshooter\\thirdenemy.generated.h",
+            "c:\\work\\projects\\testshooter\\source\\testshooter\\healthcomponent.h",
+            "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\unrealeditor\\inc\\testshooter\\healthcomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

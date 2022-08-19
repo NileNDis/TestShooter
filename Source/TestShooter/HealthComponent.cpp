@@ -53,3 +53,8 @@ void UHealthComponent::DamageTaken(AActor* DamagedActor, float Damage, const UDa
 
 
 }
+
+void UHealthComponent::ShowHp()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Red, FString::Printf(TEXT("Enemy  Health: "), Health));
+}

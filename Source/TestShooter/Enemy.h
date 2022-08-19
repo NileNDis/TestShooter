@@ -21,6 +21,9 @@ protected:
 
 public:	
 
+
+//	class AFPSCharacter* Hero;
+
 	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
 		UStaticMeshComponent* Target;
 
@@ -30,5 +33,9 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	virtual bool CanShoot(AActor* Hero) { return false; };
+
 	void HandleDestruction();//
+
+	void ShowHP();
 };

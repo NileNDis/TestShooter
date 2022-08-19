@@ -19,11 +19,11 @@ public:
     // Sets default values for this character's properties
     AFPSCharacter();
 
-    class UMyLineTrace* LineTracer;
-
     class UHealthComponent* HPComponent;
 
-    class AEnemy* Enemys;
+
+    class ATestShooterGameModeBase* GameMode;
+
 protected:
     // Called when the game starts or when spawned
     virtual void BeginPlay() override;
@@ -74,18 +74,16 @@ public:
     UPROPERTY(EditDefaultsOnly, Category = Projectile)
         TSubclassOf<class AFPSProjectile> ProjectileClass;
 
-    TArray <AActor*> Enemies;
-
     UPROPERTY()
-        float Distance = 4000;
+        float Distance = 8000;
 
-    UFUNCTION()
-        void DestroyDelegate(AActor* DestroyedActor);
+  //  UFUNCTION()
+    //    void DestroyDelegate(AActor* DestroyedActor);
 
 
     UFUNCTION()
         void SpawnProjectile();
 
-  // UFUNCTION()
-  //     void Restart();
+    //UFUNCTION()
+    //   void Restart();
 };

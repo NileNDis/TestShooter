@@ -28,6 +28,11 @@ void EmptyLinkFunctionForGeneratedCodeSecondEnemy() {}
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Distance_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_Distance;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
 	};
@@ -42,6 +47,15 @@ void EmptyLinkFunctionForGeneratedCodeSecondEnemy() {}
 		{ "ModuleRelativePath", "SecondEnemy.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASecondEnemy_Statics::NewProp_Distance_MetaData[] = {
+		{ "ModuleRelativePath", "SecondEnemy.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASecondEnemy_Statics::NewProp_Distance = { "Distance", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASecondEnemy, Distance), METADATA_PARAMS(Z_Construct_UClass_ASecondEnemy_Statics::NewProp_Distance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASecondEnemy_Statics::NewProp_Distance_MetaData)) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASecondEnemy_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASecondEnemy_Statics::NewProp_Distance,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ASecondEnemy_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ASecondEnemy>::IsAbstract,
 	};
@@ -51,11 +65,11 @@ void EmptyLinkFunctionForGeneratedCodeSecondEnemy() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_ASecondEnemy_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_ASecondEnemy_Statics::PropPointers),
 		0,
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_ASecondEnemy_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ASecondEnemy_Statics::Class_MetaDataParams))
@@ -78,9 +92,9 @@ void EmptyLinkFunctionForGeneratedCodeSecondEnemy() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TestShooter_Source_TestShooter_SecondEnemy_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ASecondEnemy, ASecondEnemy::StaticClass, TEXT("ASecondEnemy"), &Z_Registration_Info_UClass_ASecondEnemy, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASecondEnemy), 1609207029U) },
+		{ Z_Construct_UClass_ASecondEnemy, ASecondEnemy::StaticClass, TEXT("ASecondEnemy"), &Z_Registration_Info_UClass_ASecondEnemy, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASecondEnemy), 491522753U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TestShooter_Source_TestShooter_SecondEnemy_h_3101005775(TEXT("/Script/TestShooter"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TestShooter_Source_TestShooter_SecondEnemy_h_3082535669(TEXT("/Script/TestShooter"),
 		Z_CompiledInDeferFile_FID_TestShooter_Source_TestShooter_SecondEnemy_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_TestShooter_Source_TestShooter_SecondEnemy_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

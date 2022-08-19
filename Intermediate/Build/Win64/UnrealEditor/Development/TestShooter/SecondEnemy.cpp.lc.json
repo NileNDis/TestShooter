@@ -9,7 +9,10 @@
             "c:\\work\\projects\\testshooter\\source\\testshooter\\secondenemy.h",
             "c:\\work\\projects\\testshooter\\source\\testshooter\\enemy.h",
             "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\unrealeditor\\inc\\testshooter\\enemy.generated.h",
-            "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\unrealeditor\\inc\\testshooter\\secondenemy.generated.h"
+            "c:\\work\\projects\\testshooter\\intermediate\\build\\win64\\unrealeditor\\inc\\testshooter\\secondenemy.generated.h",
+            "c:\\work\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\kismet\\kismetsystemlibrary.h",
+            "c:\\work\\ue_5.0\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
+            "c:\\work\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\kismetsystemlibrary.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

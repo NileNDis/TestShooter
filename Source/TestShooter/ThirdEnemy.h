@@ -13,4 +13,7 @@ UCLASS()
 class TESTSHOOTER_API AThirdEnemy : public AEnemy
 {
 	GENERATED_BODY()
+
+public:
+	virtual bool CanShoot(AActor* Hero) override;
 };

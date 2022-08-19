@@ -5,11 +5,12 @@
 #include "DrawDebugHelpers.h"
 #include "Kismet/KismetSystemLibrary.h"
 #include "Kismet/GameplayStatics.h"
-#include "MyLineTrace.h"
+#include "TestShooterGameModeBase.h"
 #include "FirstEnemy.h"
 #include "SecondEnemy.h"
 #include "ThirdEnemy.h"
 #include "GameSave.h"
+
 
 // Sets default values
 AFPSCharacter::AFPSCharacter()
@@ -21,7 +22,7 @@ AFPSCharacter::AFPSCharacter()
     // Create a first person camera component.
     //HPComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("HPComponent"));
 
-    Enemys = CreateDefaultSubobject<AEnemy>(TEXT("Enemy"));
+  
 
     FPSCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
     check(FPSCameraComponent != nullptr);
@@ -29,9 +30,6 @@ AFPSCharacter::AFPSCharacter()
     // Attach the camera component to our capsule component.
     FPSCameraComponent->SetupAttachment(CastChecked<USceneComponent>(GetCapsuleComponent()));
 
-    LineTracer = CreateDefaultSubobject<UMyLineTrace>(TEXT("LineTracer"));
-
-    LineTracer->SetupAttachment(FPSCameraComponent);
     // Position the camera slightly above the eyes.
     FPSCameraComponent->SetRelativeLocation(FVector(0.0f, 0.0f, 50.0f + BaseEyeHeight));
 
@@ -64,23 +62,17 @@ AFPSCharacter::AFPSCharacter()
 // Called when the game starts or when spawned
 void AFPSCharacter::BeginPlay()
 {
+
     Super::BeginPlay();
 
-    UGameplayStatics::GetAllActorsOfClass(this, AEnemy::StaticClass(), Enemies);
+    GameMode = GetWorld()->GetAuthGameMode<ATestShooterGameModeBase>();
 
     GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, FString::Printf(TEXT("Press 't' to restart")),true, FVector2D(2.0f, 2.0f));
    
 
-    for (int i = 0; i < Enemies.Num(); i++)
-    {
-        Enemies[i]->OnDestroyed.AddDynamic(this, &AFPSCharacter::DestroyDelegate);
-    }
 }
 
-void AFPSCharacter::DestroyDelegate(AActor* DestroyedActor)
-{
-    Enemies.Remove(DestroyedActor);
-}
+
 
 // Called every frame
 void AFPSCharacter::Tick(float DeltaTime)
@@ -106,7 +98,7 @@ void AFPSCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
     PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AFPSCharacter::StartJump);
     PlayerInputComponent->BindAction("Jump", IE_Released, this, &AFPSCharacter::StopJump);
 
- //   PlayerInputComponent->BindAction("Restart", IE_Pressed, this, &AFPSCharacter::Restart);
+   // PlayerInputComponent->BindAction("Restart", IE_Pressed, this, &AFPSCharacter::Restart);
    // PlayerInputComponent->BindAction("Restart", IE_Released, this, &AFPSCharacter::StopRestart);
 
     PlayerInputComponent->BindAction("Save", IE_Pressed, this, &AFPSCharacter::SaveGame);
@@ -128,7 +120,11 @@ void AFPSCharacter::SaveGame()
 
     SaveGameInstance->PlayerLocation = GetActorLocation();
 
-   // SaveGameInstance->EnemyHealth = Enemys->Health;
+ // SaveGameInstance->EnemyHealth = Enemys->Health;
+ // if (Enemys == nullptr)
+ //      {
+ //          return;
+ //      }
     //SaveGameInstance->EnemyHealth = Enemys->Health;
     //save game
     UGameplayStatics::SaveGameToSlot(SaveGameInstance, TEXT("MySlot"), 0);
@@ -166,75 +162,26 @@ void AFPSCharacter::StopJump()
 }
 
 //void AFPSCharacter::Restart()
-//{
-// //  if (IE_Pressed)
-// //  {
-// //      UGameplayStatics::OpenLevel(this, FName("Minimal_Default"), true);
-// //  }
+//{        
+//    
 //}
-//
-//void AFPSCharacter::StopRestart()
-//{
-//    UGameplayStatics::OpenLevel(this, FName(*GetWorld()->GetName()), false);
-//}
+
 
 void AFPSCharacter::Fire()
 {
-   FHitResult HitResult = LineTracer->LineTrace();
-   AActor* HitActor = HitResult.GetActor();
+    TArray<AActor*> Enemies = GameMode->GetEnemies();
 
-   for (int32 i = 0; i < Enemies.Num(); i++)
-   {
+    for (int32 i = 0; i < Enemies.Num(); i++)
+    {
+        bool CanShoot = false;
 
-       if (auto FirstEnemy = Cast<AFirstEnemy>(Enemies[i]))
-       {
+        CanShoot = Cast<AEnemy>(Enemies[i])->CanShoot(this);
 
-           FVector HerosLocation = GetActorLocation();
-           FVector EnemyLocation1 = FirstEnemy->GetActorLocation();
-
-           UE_LOG(LogTemp, Warning, TEXT("Distance: %f"), FVector::Dist(HerosLocation, EnemyLocation1));
-
-           if (FVector::Dist(HerosLocation, EnemyLocation1) <= 500)
-           {
-               SpawnProjectile();
-           }
-
-       }
-       else if (auto SecondEnemy = Cast<ASecondEnemy>(Enemies[i]))
-       {
-
-           if (!HitActor) 
-           {
-               UE_LOG(LogTemp, Error, TEXT("NoActor"));
-               continue;
-           }
-
-           if (HitActor == SecondEnemy)
-           {
-               SpawnProjectile();
-           }
-       }
-
-       else if (auto ThirdEnemy = Cast<AThirdEnemy>(Enemies[i]))
-       {
-         FVector Hero = GetActorLocation();//точка игрока
-         FVector Enemy = ThirdEnemy->GetActorLocation();//точка врага
-
-         FVector HeroToEnemyVector = Enemy - Hero;// вектор между врагом и игроком
-         FVector Actor = GetActorForwardVector();// вектор игрока
-
-         HeroToEnemyVector.Normalize();
-
-         float angle = FMath::Acos(FVector::DotProduct(Actor, HeroToEnemyVector));
-         float DeegresAngle = FMath::RadiansToDegrees(angle);
-
-         UE_LOG(LogTemp, Warning, TEXT("Angle: %f"), DeegresAngle);
-
-         if (DeegresAngle >= 20 && DeegresAngle <= 40)
-         {
-             SpawnProjectile();
-         }
-       }
+        if (CanShoot)
+        {
+            SpawnProjectile();
+            return;
+        }
    }
 }
 

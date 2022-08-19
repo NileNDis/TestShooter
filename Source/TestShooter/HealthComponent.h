@@ -20,6 +20,9 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		float Health = 0;
+
 private:
 
 
@@ -36,9 +39,11 @@ public:
 	UPROPERTY(EditAnywhere)
 		float MaxHealth = 100;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	float Health = 0;
+	UFUNCTION(BlueprintPure)
+		float GetHP() { return Health; };
 
 	class ATestShooterGameModeBase* TestShooterGameModeBase;
 	class AEnemy* Enemy;
+
+	void ShowHp();
 };

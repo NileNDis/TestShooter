@@ -19,11 +19,13 @@ class AController;
 #define FID_TestShooter_Source_TestShooter_HealthComponent_h_13_SPARSE_DATA
 #define FID_TestShooter_Source_TestShooter_HealthComponent_h_13_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execGetHP); \
 	DECLARE_FUNCTION(execDamageTaken);
 
 
 #define FID_TestShooter_Source_TestShooter_HealthComponent_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execGetHP); \
 	DECLARE_FUNCTION(execDamageTaken);
 
 

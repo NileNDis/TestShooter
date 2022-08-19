@@ -4,6 +4,7 @@
 #include "Enemy.h"
 #include "Engine/World.h"
 #include "HealthComponent.h"
+#include "FPSCharacter.h"
 #include "GameFramework/Actor.h"
 
 // Sets default values
@@ -12,6 +13,7 @@ AEnemy::AEnemy()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	//ShowHP();
 
 	Target = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Target"));
 
@@ -34,6 +36,9 @@ void AEnemy::BeginPlay()
 void AEnemy::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
+void AEnemy::ShowHP()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Yellow, FString::Printf(TEXT("Enem111y  Health11111111: "), Health));
+}
